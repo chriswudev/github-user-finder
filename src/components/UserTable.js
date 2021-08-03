@@ -52,6 +52,18 @@ export default function UserTable({ users }) {
       align: 'center',
       width: 250,
       editable: false,
+      renderCell: (e) => {
+        return (
+          <a
+            className={classes.avatarCell}
+            href={`https://github.com/${e.row.login}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {e.row.login}
+          </a>
+        );
+      },
     },
     {
       field: 'type',
